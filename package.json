@@ -1,0 +1,29 @@
+{
+  "name": "Crawlspace",
+  "version": "0.1.0",
+  "description": "Main website for Crawlspace by Daniel Shumway",
+  "dependencies": {
+    "handlebars": "^3.0.3",
+    "less": "^2.5.1",
+    "mkdirp": "^0.5.1"
+},
+  "scripts": {
+    "build": "node --harmony source/build/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danShumway/Crawlspace.git"
+  },
+  "keywords": [
+    "Comic",
+    "Latinforimagination",
+    "Daniel",
+    "Shumway"
+  ],
+  "author": "Daniel Shumway",
+  "license": "None",
+  "bugs": {
+    "url": "https://github.com/danShumway/Crawlspace/issues"
+  },
+  "homepage": "https://github.com/danShumway/Crawlspace"
+}
