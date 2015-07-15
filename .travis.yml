@@ -1,7 +1,7 @@
 language: node_js
 node_js:
     - node
-script: bash ./build/deploy.sh
+script: bash source/build/deploy.sh
 env:
    global:
     - GH_REF: github.com/danShumway/Crawlspace.git
