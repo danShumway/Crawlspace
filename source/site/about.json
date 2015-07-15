@@ -1,0 +1,9 @@
+{
+    "pages" : [
+        {
+            "title" : "About",
+            "url" : "about",
+            "text" : "About the comic and everything else...  this should support markdown"
+        }
+    ]
+}

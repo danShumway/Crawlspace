@@ -43,10 +43,10 @@ var build_less = {
                 template : 'comic.hbs',
                 data : 'comic.json'
             },
-            // about : {
-            //     template : 'about.hbs',
-            //     data : 'about.json'
-            // }
+             about : {
+                template : 'about.hbs',
+                data : 'about.json'
+            }
         },
 
         //TODO: Clean directories before writing files to them.

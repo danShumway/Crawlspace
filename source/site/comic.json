@@ -2,12 +2,12 @@
     "pages" : [
         {
             "title" : "test",
-            "url" : "0",
-            "text" : "hello there"
+            "url" : "title",
+            "text" : "Starting page"
         }, {
             "title" : "test2",
-            "url" : "1",
-            "text" : "goodbye"
+            "url" : "1-1",
+            "text" : "Most recent page goes here"
         }
     ]
 }
