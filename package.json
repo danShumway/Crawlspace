@@ -5,8 +5,9 @@
   "dependencies": {
     "handlebars": "^3.0.3",
     "less": "^2.5.1",
-    "mkdirp": "^0.5.1"
-},
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.4.1"
+  },
   "scripts": {
     "build": "node --harmony source/build/build.js"
   },

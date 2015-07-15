@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+    - node
+script: bash ./build/deploy.sh
+env:
+   global:
+    - GH_REF: github.com/danShumway/Crawlspace.git
+    - secure: elzaP7/bAod6o4zp96aQXdHowxP0Ie5+yx1MLfufnzlxQYoD35UyC0hRpeox3BisyC61p2E9Bn0GTLtN6zh5zF8mYUlfBE+LqSxerMQT25BWlxahKAm3+OTGtjpWTbfkCMPzuXlclQaeQQz2fxCz00Updq7bmGgMgTnVnYkT6ds=

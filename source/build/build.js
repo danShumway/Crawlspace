@@ -1,6 +1,7 @@
 'use strict';
 var fs = require('fs'),
     mkdir = require('mkdirp'),
+    rimraf = require('rimraf'),
     less = require('less'),
     Handlebars = require('handlebars');
 
@@ -8,7 +9,7 @@ var fs = require('fs'),
 // Assume a flat structure for both less and hbs. No imports, nothing fancy - this site isn't very big.
 var build_less = {
         directory : 'source/less/',
-        output : 'css/main.css',
+        output : 'out/css/main.css',
         run : function() {
             var that=this,
                 files = fs.readdirSync(build_less.directory),
@@ -33,7 +34,7 @@ var build_less = {
     build_handlebars = {
         templates : 'source/templates/',
         data : 'source/site/',
-        output : 'pages/',
+        output : 'out/',
         base : 'index.hbs',
         sections : {
             comic : {
@@ -46,30 +47,37 @@ var build_less = {
             // }
         },
 
-        //Going a little let crazy here.  Not sure how I feel about it.
+        //TODO: Clean directories before writing files to them.
         run : function() {
             var that=build_handlebars,
                 base=Handlebars.compile( fs.readFileSync(that.templates + that.base, 'utf8') );
 
             //Loop through each section.
+            //Going a little 'let' crazy here.  Not sure how I feel about it.
             for (let sectionName in that.sections) {
                 //read data and template, re-use existing props for convenience.
                 let section = that.sections[sectionName],
                     data = JSON.parse( fs.readFileSync(that.data + section.data) );
 
+                rimraf.sync(that.output + sectionName); //Clean it.
+                mkdir.sync(that.output + sectionName); //Make directory if it doesn't exist.
                 Handlebars.registerPartial('page', fs.readFileSync(that.templates + section.template, 'utf8') );
                 //For each page in the section.
                 for (let i=0; i<data.pages.length; i++) {
                     let page = data.pages[i],
-                        output = base({ data:page }),
-
+                        output = base({ data:page });
 
                     //Attach and output.
-                    compiled_oup
-                    mkdir.sync(that.output + sectionName);
-                    fs.writeFileSync(that.output + sectionName + '/' + page.url, output);
-                } //STILL NEED TO ATTACH THAT TO THE BODY.
+                    fs.writeFileSync(that.output + sectionName + '/' + page.url + '.html', output);
+
+                    //Create index clone of final file. Yeah, it's not the prettiest.
+                    if (i === data.pages.length-1) {
+                        fs.writeFileSync(that.output + sectionName + '/index.html', output);
+                    }
+                }
             }
+
+            //Create index.js (hardcoded just points to the most recent page)
         }
     }
 
