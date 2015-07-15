@@ -81,7 +81,7 @@ var build_less = {
             }
 
             //Create index.js (hardcoded just points to the most recent page)
-            fs.writeFileSync(that.output + that.index, index);
+            fs.writeFileSync(that.output + 'index.html', index);
         }
     }
 
