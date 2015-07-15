@@ -12,12 +12,13 @@ var build_less = {
         output : 'out/css/main.css',
         run : function() {
             var that=this,
-                files = fs.readdirSync(build_less.directory),
+                files = fs.readdirSync(that.directory),
                 output = '',
                 i;
 
+            mkdir.sync('out/css'); //Clean
             for(i=0; i<files.length; i++) {
-                output += fs.readFileSync(build_less.directory + files[i]);
+                output += fs.readFileSync(that.directory + files[i]);
             }
 
             less.render(output, {
@@ -26,7 +27,7 @@ var build_less = {
 
             //Making callbacks look nicer.
             function write(err, output) {
-                fs.writeFileSync(build_less.output, output.css);
+                fs.writeFileSync(that.output, output.css);
             }
         }
     },
@@ -35,7 +36,8 @@ var build_less = {
         templates : 'source/templates/',
         data : 'source/site/',
         output : 'out/',
-        base : 'index.hbs',
+        base : 'base.hbs',
+        index : 'index.hbs',
         sections : {
             comic : {
                 template : 'comic.hbs',
@@ -50,7 +52,8 @@ var build_less = {
         //TODO: Clean directories before writing files to them.
         run : function() {
             var that=build_handlebars,
-                base=Handlebars.compile( fs.readFileSync(that.templates + that.base, 'utf8') );
+                base=Handlebars.compile( fs.readFileSync(that.templates + that.base, 'utf8') ),
+                index=Handlebars.compile( fs.readFileSync(that.templates + that.index, 'utf8') )();
 
             //Loop through each section.
             //Going a little 'let' crazy here.  Not sure how I feel about it.
@@ -78,6 +81,7 @@ var build_less = {
             }
 
             //Create index.js (hardcoded just points to the most recent page)
+            fs.writeFileSync(that.output + that.index, index);
         }
     }
 
