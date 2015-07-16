@@ -4,7 +4,7 @@ Katheryn discovers that not everything in her new apartment is what it seems to 
 #About
 Crawlspace is a very light-horror webcomic I'm creating for personal enjoyment and personal development as an artist and a writer. It's being distributed under the moniker of Latinforimagination, a pseudo-entity that I use to distribute and market nearly all of my game-related and media projects.
 
-Crawlspace is intended for a general audience, but contains some mature situations and language that isn't suitable for younger children.  If you're bothered by swearing, I'm including a filter that 
+Crawlspace is intended for a general audience, but contains some mature situations and language that isn't suitable for younger children.  If you're bothered by language, I'm including an optional filter that tones down the majority of language and shows alternate dialog whenever a character would outright swear.
 
 #Legal
 Images, artwork, audio, and other media files found on this repository (unless otherwise noted) are licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nc-nd/4.0/).  Names, locations, and narrative concepts are owned exclusively by their author. You should not attempt to rename or remix this comic without my permission; you should not distribute it without proper attribution.
