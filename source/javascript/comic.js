@@ -1,3 +1,4 @@
+//TODO: this website supports IE10 and above.
 (function() {
     'use strict';
 
@@ -6,6 +7,7 @@
         mode : 'off', //default
         filters : ['off', 'on'], //total filters we can have.
         elements : {}, //autofilled at runtime
+        buttonToggle : null, //autofilled at runtime
 
         //adds elements and variables.
         init : function() {
@@ -15,10 +17,14 @@
             }
 
             for(i=0;i<that.filters.length;i++) {
-                elements[that.filters[i]] = document.getElementById('comic-' + that.filters[i]);
+                that.elements[that.filters[i]] = document.getElementById('comic-' + that.filters[i]);
             }
 
-            document.getElementById('comic-base')
+            //Nothing needs to be done with this unless we want to block certain browsers?
+            //Probably should just fail gracefully if local storage isn't detected.
+            //document.getElementById('comic-base');
+
+            that.buttonToggle = document.getElementById('toggle-switch')
             that.loadLocalStorage();
         },
         //Refreshes images based on filters selected.
@@ -34,27 +40,41 @@
             }
         },
         //Reads from localStorage, and corrects any errors that might exist.
+        //TODO: should fail gracefully if no localStorage exists.
         loadLocalStorage : function() {
-            var mode = localStorage.getItem(that.key);
+            var that=this,
+                mode = localStorage.getItem(that.key);
 
-            if (that.filters.indexOf(mode) === -1) {
+            if(that.filters.indexOf(mode) === -1) {
                 localStorage.setItem(that.key, that.mode);
             } else {
                 that.mode = mode;
             }
 
             that.updateComic();
+            that.setButtonState();
         },
-        //saves to local
-        saveLocalStorage : function(mode, toggle) {
-            that.mode = mode;
-            localStorage.setItem(that.key, mode);
-            //toggle.class = //Swap buttons?
+        //saves to local - if mode is not specified, will simply loop through filters.
+        saveLocalStorage : function(mode) {
+            if(mode) {
+                that.mode = mode;
+            } else {
+                var index = ( that.filters.indexOf(that.mode) + 1 ) % that.filters.length;
+                that.mode = that.filters[index];
+            }
+
+            localStorage.setItem(key, that.mode);
             that.updateComic();
+            that.setButtonState();
         },
         //updates buttons on the page with their given classes.
-        setPageState : function(classOn, classOff) {
-            this.style.class = mode
+        setButtonState : function() {
+            var that=this, i;
+
+            for(i=0;i<that.filters.length;i++) {
+                that.buttonToggle.classList.remove(that.filters[i]);
+            }
+            that.buttonToggle.classList.add(that.mode);
         }
     };
 }());

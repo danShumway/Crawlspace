@@ -3,11 +3,18 @@
         {
             "title" : "test",
             "url" : "title",
-            "text" : "Starting page"
+            "text" : "Starting page",
+            "base" : "..img/comics/title.jpg",
+            "filter" : "",
+            "no-filter" : ""
+
         }, {
-            "title" : "test2",
+            "title" : "1-1",
             "url" : "1-1",
-            "text" : "Most recent page goes here"
+            "text" : "Most recent page goes here",
+            "base" : "../img/comics/1-1.jpg",
+            "filter" : "",
+            "no-filter" : ""
         }
     ]
 }

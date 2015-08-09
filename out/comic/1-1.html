@@ -6,14 +6,33 @@
 
 	<!--CSS and stuff-->
     <link rel="stylesheet" href="../css/main.css" type="text/css" />
-	<script src="../js/helpers.js" type="text/javascript" />
+
+	<!--Fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+
+	<!--JS-Shims-->
+	<script src="../js/helpers.js" type="text/javascript"></script>
 
 </head>
 	<body>
 		<div class="center">
 			<div class="header">
-				<div>Most recent page goes here</div>
+				Crawlspace
 			</div>
+			<!--Comic navigation-->
+			<div class="subheader">
+			    Most recent page goes here
+			</div>
+			
+			<!--Comics-->
+			<img class="comic" id="comic-base" src=../img/comics/1-1.jpg />
+			<img class="comic" id="comic-off" src= />
+			<img class="comic" id="comic-on" src= />
+			
+			<script src="../js/comic.js" type="text/javascript"></script>
+			<script type="text/javascript">
+			    window.comic.init();
+			</script>
 		</div>
 	</body>
 </html>

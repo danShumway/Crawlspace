@@ -95,6 +95,20 @@ var build_less = {
             var that=build_javascript;
 
             rimraf.sync(that.output); //Clean it.
+            mkdir.sync(that.output); //Make directory if it doesn't exist.
+            fs.copySync(that.input, that.output); //Copy everything over.
+        }
+    },
+    //Same deal as above, just copying images over, will resize and compress them later.
+    build_images = {
+        input : 'source/images/',
+        output : 'out/img/',
+
+        run : function() {
+            var that=build_images;
+
+            rimraf.sync(that.output); //Clean it.
+            mkdir.sync(that.output); //Make directory if it doesn't exist.
             fs.copySync(that.input, that.output); //Copy everything over.
         }
     };
@@ -107,4 +121,6 @@ console.log('Compiling handlebars');
 build_handlebars.run();
 console.log('Compiling javascript');
 build_javascript.run();
+console.log('Compiling images');
+build_images.run();
 console.log('Have a wonderful day');

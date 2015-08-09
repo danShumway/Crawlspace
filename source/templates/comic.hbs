@@ -1,1 +1,14 @@
-<div>{{text}}</div>
+<!--Comic navigation-->
+<div class="subheader">
+    {{text}}
+</div>
+
+<!--Comics-->
+<img class="comic" id="comic-base" src={{base}} />
+<img class="comic" id="comic-off" src={{filter}} />
+<img class="comic" id="comic-on" src={{no-filter}} />
+
+<script src="../js/comic.js" type="text/javascript"></script>
+<script type="text/javascript">
+    window.comic.init();
+</script>
