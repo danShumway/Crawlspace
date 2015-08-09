@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Main website for Crawlspace by Daniel Shumway",
   "dependencies": {
+    "fs-extra": "^0.23.1",
     "handlebars": "^3.0.3",
     "imagemin": "^3.2.0",
     "less": "^2.5.1",
@@ -12,7 +13,7 @@
     "uglify-js": "^2.4.24"
   },
   "watch": {
-    "build": "source/{javascript, less, site, templates}/"
+    "build": "source"
   },
   "scripts": {
     "build": "node --harmony source/build/build.js",

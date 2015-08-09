@@ -1,5 +1,6 @@
 'use strict';
-var fs = require('fs'),
+//TODO: remove rimraf and mkdir now that you're using fs-extra.
+var fs = require('fs-extra'),
     mkdir = require('mkdirp'),
     rimraf = require('rimraf'),
     less = require('less'),
@@ -83,6 +84,19 @@ var build_less = {
             //Create index.js (hardcoded just points to the most recent page)
             fs.writeFileSync(that.output + 'index.html', index);
         }
+    },
+    //ATM just copies javascript over to the other directory.
+    //There are libraries set up to minify, but that's not a high priority right now.
+    build_javascript = {
+        input : 'source/javascript/',
+        output : 'out/js/',
+
+        run : function() {
+            var that=build_javascript;
+
+            rimraf.sync(that.output); //Clean it.
+            fs.copySync(that.input, that.output); //Copy everything over.
+        }
     };
 
 
@@ -91,5 +105,6 @@ console.log('Compiling less')
 build_less.run();
 console.log('Compiling handlebars');
 build_handlebars.run();
-// console.log('minifying javascript');
+console.log('Compiling javascript');
+build_javascript.run();
 console.log('Have a wonderful day');
