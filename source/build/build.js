@@ -83,8 +83,7 @@ var build_less = {
             //Create index.js (hardcoded just points to the most recent page)
             fs.writeFileSync(that.output + 'index.html', index);
         }
-    }
-
+    };
 
 
 //-----------RUN-------------------
@@ -92,4 +91,5 @@ console.log('Compiling less')
 build_less.run();
 console.log('Compiling handlebars');
 build_handlebars.run();
+// console.log('minifying javascript');
 console.log('Have a wonderful day');
