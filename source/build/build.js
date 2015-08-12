@@ -69,6 +69,15 @@ var build_less = {
                 //For each page in the section.
                 for (let i=0; i<data.pages.length; i++) {
                     let page = data.pages[i],
+                        output;
+
+                        //Append any other relevant data.
+                        page.previous = (i > 0) ? '../' + sectionName + '/' + data.pages[i-1].url + '.html': null;
+                        page.next = (i < data.pages.length - 1) ? '../' + sectionName + '/' + data.pages[i+1].url + '.html'  : null;
+                        page.first = '../' + sectionName + '/' + data.pages[0].url + '.html';
+                        page.last = '../' + sectionName + '/' + data.pages[ data.pages.length - 1 ].url + '.html';
+
+                        //Compile.
                         output = base({ data:page });
 
                     //Attach and output.

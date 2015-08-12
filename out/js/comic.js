@@ -7,6 +7,7 @@
         mode : 'off', //default
         filters : ['off', 'on'], //total filters we can have.
         elements : {}, //autofilled at runtime
+        base : null, //autofilled at runtime.
         buttonToggle : null, //autofilled at runtime
 
         //adds elements and variables.
@@ -20,9 +21,8 @@
                 that.elements[that.filters[i]] = document.getElementById('comic-' + that.filters[i]);
             }
 
-            //Nothing needs to be done with this unless we want to block certain browsers?
-            //Probably should just fail gracefully if local storage isn't detected.
-            //document.getElementById('comic-base');
+            that.base = document.getElementById('comic-base');
+
 
             that.buttonToggle = document.getElementById('toggle-switch')
             that.loadLocalStorage();
@@ -31,6 +31,7 @@
         updateComic : function() {
             var that=this, i;
 
+            that.base.style.display = 'block';
             for(i=0;i<that.filters.length;i++) {
                 if(that.filters[i] === that.mode) {
                     that.elements[that.filters[i]].style.display = 'block';
