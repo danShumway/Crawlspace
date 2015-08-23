@@ -15,6 +15,13 @@
             "filter" : "../img/comics/blank.png",
             "no-filter" : "../img/comics/blank.png"
         }, {
+            "title" : "1-2",
+            "url" : "1-2",
+            "text" : "Most recent page goes here",
+            "base" : "../img/comics/1-2.jpg",
+            "filter" : "../img/comics/blank.png",
+            "no-filter" : "../img/comics/blank.png"
+        }, {
             "title" : "1-3",
             "url" : "1-3",
             "text" : "What should this text even be?  Alt text?",

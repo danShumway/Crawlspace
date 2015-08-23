@@ -1,14 +1,16 @@
 <!--Comic navigation-->
 <div class="subheader">
-    <a href={{first}}><img class="nav" src="../img/navigation/first.png" /></a>
+    <a href={{first}}><img class="nav left" src="../img/navigation/first.png" /></a>
     {{#if previous}}
-        <a href={{previous}}><img class="nav" src="../img/navigation/previous.png" /></a>
+        <a href={{previous}}><img class="nav left" src="../img/navigation/previous.png" /></a>
     {{/if}}
 
+    <!--Order of right navigation is flipped because we're using float:right-->
+    <a href={{last}}><img class="nav right" src="../img/navigation/last.png" /></a>
     {{#if next}}
-        <a href={{next}}><img class="nav" src="../img/navigation/next.png" /></a>
+        <a href={{next}}><img class="nav right" src="../img/navigation/next.png" /></a>
     {{/if}}
-    <a href={{last}}><img class="nav" src="../img/navigation/last.png" /></a>
+    <div style="clear: both"></div>
 </div>
 
 <!--Comics-->

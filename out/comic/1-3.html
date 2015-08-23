@@ -19,13 +19,20 @@
 			<div class="header">
 				Crawlspace
 			</div>
+			<ul class="menu">
+				<li><a href="/comic">Read</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="https://github.com/danShumway/Crawlspace">Github</a></li>
+			</ul>
 			<!--Comic navigation-->
 			<div class="subheader">
-			    <a href=../comic/title.html><img class="nav" src="../img/navigation/first.png" /></a>
-			        <a href=../comic/1-1.html><img class="nav" src="../img/navigation/previous.png" /></a>
+			    <a href=../comic/title.html><img class="nav left" src="../img/navigation/first.png" /></a>
+			        <a href=../comic/1-2.html><img class="nav left" src="../img/navigation/previous.png" /></a>
 			
-			        <a href=../comic/1-4.html><img class="nav" src="../img/navigation/next.png" /></a>
-			    <a href=../comic/1-7.html><img class="nav" src="../img/navigation/last.png" /></a>
+			    <!--Order of right navigation is flipped because we're using float:right-->
+			    <a href=../comic/1-7.html><img class="nav right" src="../img/navigation/last.png" /></a>
+			        <a href=../comic/1-4.html><img class="nav right" src="../img/navigation/next.png" /></a>
+			    <div style="clear: both"></div>
 			</div>
 			
 			<!--Comics-->

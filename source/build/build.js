@@ -124,7 +124,7 @@ var build_less = {
 
 
 //-----------RUN-------------------
-console.log('Compiling less')
+console.log('Compiling less');
 build_less.run();
 console.log('Compiling handlebars');
 build_handlebars.run();

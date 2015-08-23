@@ -1,13 +1,22 @@
 body {
     @backgroundColor:black;
     @fontColor:white;
+    @pageWidth:680px;
 
 
+    //https://www.google.com/fonts/specimen/Indie+Flower
+    font-family:'Indie Flower', cursive;
     background-color:@backgroundColor;
 
+    //Clear some annoying defaults out
+    a {
+        text-decoration:none;
+    }
+
+    //
     .center {
         width:100%;
-        max-width:680px;
+        max-width:@pageWidth;
 
         //Center on screen
         margin-left:auto;
@@ -18,14 +27,30 @@ body {
         font-size:50px;
         text-align:center;
         color:@fontColor;
-
-        //https://www.google.com/fonts/specimen/Indie+Flower
-        font-family: 'Indie Flower', cursive;
     }
 
-    .nav {
-        font-size:25px;
-        text-align:left;
-        color:@fontColor;
+
+    //Main menu
+    .menu {
+        width:350px;
+        text-align:justify;
+        margin-left:auto;
+        margin-right:auto;
+
+        li {
+            display:inline-block;
+
+            a {
+                max-width:100px;
+                font-size:25px;
+                color:@fontColor;
+            }
+        }
+    }
+
+    .menu:after {
+        content:'';
+        display:inline-block;
+        width:100%;
     }
 }
