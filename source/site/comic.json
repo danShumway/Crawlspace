@@ -70,6 +70,13 @@
             "base" : "../img/comics/2-0.jpg",
             "filter" : "../img/comics/blank.png",
             "no-filter" : "../img/comics/blank.png"
+        }, {
+            "title" : "2-1",
+            "url" : "2-1",
+            "text" : "Updating every Monday, except for when I skip three weeks.",
+            "base" : "../img/comics/2-1.jpg",
+            "filter" : "../img/comics/blank.png",
+            "no-filter" : "../img/comics/blank.png"
         }
     ]
 }
