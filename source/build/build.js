@@ -4,7 +4,8 @@ var fs = require('fs-extra'),
     mkdir = require('mkdirp'),
     rimraf = require('rimraf'),
     less = require('less'),
-    Handlebars = require('handlebars');
+    Handlebars = require('handlebars'),
+    UglifyJS = require('uglify-js');
 
 //------------COMPILATION----------------
 // Assume a flat structure for both less and hbs. No imports, nothing fancy - this site isn't very big.
@@ -101,11 +102,16 @@ var build_less = {
         output : 'out/js/',
 
         run : function() {
-            var that=build_javascript;
+            var that=build_javascript,
+                files = fs.readdirSync(that.input),
+                output = null;
 
-            rimraf.sync(that.output); //Clean it.
+            rimraf.sync(that.output); //Clean destination.
             mkdir.sync(that.output); //Make directory if it doesn't exist.
-            fs.copySync(that.input, that.output); //Copy everything over.
+            for(let i=0; i<files.length; i++) {
+                output = UglifyJS.minify(that.input + files[i]); //Uglify each file (separately)
+                fs.writeFileSync(that.output + files[i], output.code); //Write to new location.
+            }
         }
     },
     //Same deal as above, just copying images over, will resize and compress them later.
