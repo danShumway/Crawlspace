@@ -77,6 +77,13 @@
             "base" : "../img/comics/2-1.jpg",
             "filter" : "../img/comics/blank.png",
             "no-filter" : "../img/comics/blank.png"
+        }, {
+        	"title" : "2-2",
+        	"url" : "2-2",
+        	"text" : "Katie. Wait Katie, you're forgetting your laptop!",
+        	"base" : "../img/comics/2-2-back.png",
+        	"filter" : "../img/comics/2-2-d1.png",
+        	"no-filter" : "../img/comics/2-2-d1.png"
         }
     ]
 }
