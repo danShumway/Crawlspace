@@ -1,20 +1,32 @@
 body {
-    @backgroundColor:black;
-    @fontColor:white;
+    @backgroundColor:rgb(15, 15, 15);
+    @fontColor:rgb(230, 230, 230);
     @pageWidth:680px;
 
-
-    //https://www.google.com/fonts/specimen/Indie+Flower
-    font-family:'Indie Flower', cursive;
     background-color:@backgroundColor;
     color:@fontColor;
+
+    //For non-js compatability
+    &.no-js {
+        .js-banner {
+            display: block;
+        }
+    }
 
     //Clear some annoying defaults out
     a {
         text-decoration:none;
     }
 
-    //
+    .banner {
+        background-color:rgb(200, 200, 200);
+        text-align:center;
+        color:black;
+
+        display: none;
+        width:100%;
+    }
+
     .center {
         width:100%;
         max-width:@pageWidth;
@@ -24,33 +36,37 @@ body {
         margin-right:auto;
     }
 
-    .header {
-        font-size:50px;
-        text-align:center;
-    }
+    header {
+        //https://www.google.com/fonts/specimen/Indie+Flower
+        font-family:'Indie Flower', cursive;
 
+        .title {
+            font-size:50px;
+            text-align:center;
+        }
 
-    //Main menu
-    .menu {
-        width:350px;
-        text-align:justify;
-        margin-left:auto;
-        margin-right:auto;
+        //Main menu
+        .menu {
+            width:350px;
+            text-align:justify;
+            margin-left:auto;
+            margin-right:auto;
 
-        li {
-            display:inline-block;
+            li {
+                display:inline-block;
 
-            a {
-                max-width:100px;
-                font-size:25px;
-                color:@fontColor;
+                a {
+                    max-width:100px;
+                    font-size:25px;
+                    color:@fontColor;
+                }
             }
         }
-    }
 
-    .menu:after {
-        content:'';
-        display:inline-block;
-        width:100%;
+        .menu:after {
+            content:'';
+            display:inline-block;
+            width:100%;
+        }
     }
 }

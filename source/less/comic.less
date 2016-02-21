@@ -16,11 +16,13 @@
 }
 
 .comic {
-    position: absolute;
-    display: none;
     max-width: 680px;
-}
 
-.comic-base {
-    position: relative;
+    img {
+        position: absolute;
+
+        &.no-filter {
+            display: none;
+        }
+    }
 }

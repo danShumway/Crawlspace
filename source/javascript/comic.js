@@ -1,3 +1,13 @@
+
+(function () {
+    'use strict';
+
+    var key = 'crawlspace'; //localstorage key
+
+});
+
+
+
 //TODO: this website supports IE10 and above.
 (function() {
     'use strict';
@@ -78,4 +88,4 @@
             that.buttonToggle.classList.add(that.mode);
         }
     };
-}());
+});
