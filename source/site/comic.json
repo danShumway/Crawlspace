@@ -84,6 +84,13 @@
         	"base" : "/img/comics/2-2-back.png",
         	"filter" : "/img/comics/2-2-d1.png",
         	"no-filter" : "/img/comics/2-2-d1.png"
+        }, {
+        	"title" : "Chapter 2, Page 3",
+        	"url" : "2-3",
+        	"text" : "...",
+        	"base" : "/img/comics/2-3.jpg",
+        	"filter" : "/img/comics/blank.png",
+        	"no-filter" : "/img/comics/blank.png"
         }
     ]
 }
