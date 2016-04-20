@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Crawlspace</title>
+
+	<!--CSS and stuff-->
+    <link rel="stylesheet" href="/css/main.css" type="text/css" />
+
+	<!--Fonts-->
+	<!--TODO: remove this, it looks disgusting-->
+	<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+
+	<!--JS-Shims-->
+	<script src="/js/helpers.js" type="text/javascript"></script>
+	<script src="/js/tracking.js" type="text/javascript"></script>
+</head>
+
+	<!--TODO: Change to descriptive markup-->
+	<body class='no-js'>
+		<script type="text/javascript">
+			document.querySelectorAll('body')[0].classList.remove('no-js');
+		</script>
+
+		<div class="banner js-banner">
+			Crawlspace uses Javascript for optional site enhancements. Learn more <a href="/privacy/">here</a>.
+		</div>
+
+		<div class="banner tracking-banner">
+			You currently have DNT enabled in your browser. If you'd like to support Crawlspace, consider opting into <a target="_blank" href="/privacy/#tracking">user tracking</a>.
+			<br>
+			Don't worry, regardless of what you choose you won't see this message again.
+		</div>
+
+		<header>
+			<div class="title">
+				Crawlspace
+			</div>
+			<nav>
+				<ul class="menu">
+					<!--TODO: More robust way to get base address-->
+					<li><a href="/">Read</a></li>
+					<li><a href="/about/">About</a></li>
+					<!--<li><a href="/privacy/">Privacy</a></li>--> <!--Enable once privacy is done-->
+					<li><a target="_blank" href="https://github.com/danShumway/Crawlspace">Github</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main class="center">
+			<!--Comic navigation-->
+			<nav class="subheader">
+			    <a href=/comic/1-0><img class="nav left" src="/img/navigation/first.png" /></a>
+			        <a href=/comic/2-5><img class="nav left" src="/img/navigation/previous.png" /></a>
+			
+			    <!--Order of right navigation is flipped because we're using float:right-->
+			    <a href=/comic/2-6><img class="nav right" src="/img/navigation/last.png" /></a>
+			    <div style="clear: both"></div>
+			</nav>
+			
+			<section class="comic" title="" style="background-color:green;">
+			
+			    <a  href=/comic/2-6 >
+			        <img draggable=false class="base" src=/img/comics/2-6.png />
+			        <img draggable=false class="filter" src=/img/comics/2-6-front.png />
+			        <img draggable=false class="no-filter" src=/img/comics/2-6-front.png />
+			    </a>
+			</section>
+			
+			
+			<script src="/js/comic.js" type="text/javascript"></script>
+		</main>
+	</body>
+</html>
