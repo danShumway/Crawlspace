@@ -105,6 +105,13 @@
         	"base" : "/img/comics/2-5.png",
         	"filter" : "/img/comics/blank.png",
         	"no-filter" : "/img/comics/blank.png"
+        }, {
+            "title" : "Chapter 2, Page 6",
+            "url" : "2-6",
+            "text" : "",
+            "base" : "/img/comics/2-6.png",
+            "filter" : "/img/comics/2-6-front.png",
+            "no-filter" : "/img/comics/2-6-front.png"
         }
     ]
 }
